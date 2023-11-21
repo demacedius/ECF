@@ -1,0 +1,21 @@
+<form class="max-w-sm mx-auto bg-tertial p-4 rounded-lg flex items-center flex-col gap-4" method="post" action="">
+    @!component('components/input',{
+        label: 'nom',
+        name: 'name',
+        value: comment.name
+    })
+    @!component('components/input', {
+        label: 'commentaire du client',
+        name: 'content',
+        value: comment.content,
+        type: 'textarea'
+    })
+
+    <div class="p-4">
+        <input {{ comment.online ? 'checked' : ''}} type="checkbox" name="online" id="online">
+        <label for="online" class="text-primary font-bold font-secondary">En ligne ?</label>
+    </div>
+
+    
+    <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
+</form>

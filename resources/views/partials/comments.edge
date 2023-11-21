@@ -1,0 +1,22 @@
+@layout('layout/layout')
+@set('title', 'Page commentaire')
+@section('body')
+  <section class="flex flex-col items-center gap-16 justify-center ">
+    <h2 class="text-tertial font-primary font-bold text-3xl pt-8">Ils parle de nous</h2>
+    <p class="bg-tertial text-secondary p-4 w-fit rounded-lg"><a href="{{route('CommentairesController.create')}}">Creer un article</a></p>
+    <main >
+        <ul>
+            @each(comment in comment)
+                @if(comment.online == 0)
+                  
+                    <li class="p-4 border-gray-500 border flex flex-col items-center justify-around">
+                    <a href="{{route('CommentairesController.show', {id: comment.id})}}">{{ comment.name }}</a>
+                    
+                    <p>{{ comment.content }}</p>
+                    </li>
+                @end
+            @endeach
+        </ul>
+    </main>
+  </section>
+@end

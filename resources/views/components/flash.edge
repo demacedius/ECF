@@ -1,0 +1,13 @@
+@if(flashMessages.has('success'))
+    <div class="bg-green-400 text-green-900 font-secondary text-lg font-bold text-center p-4">
+        {{flashMessages.get('success' )}}
+    </div>
+  
+@end
+
+@if(flashMessages.has('error'))
+    <div class="bg-red-400 text-red-900 font-secondary text-lg font-bold text-center p-4">
+        {{flashMessages.get('error' )}}
+    </div>
+  
+@end

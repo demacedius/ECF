@@ -1,0 +1,12 @@
+@layout('layout/layout')
+@set('title', 'Page modification commentaire')
+@section('body')
+    <main class="bg-secondary flex flex-col items-center gap-16 p-16">
+        @if(comment.online == 0)
+          
+            <h2>Modifier le commentaire de {{comment.name}}</h2>
+        
+            @include('partials/form')
+        @end
+    </main>
+@end
